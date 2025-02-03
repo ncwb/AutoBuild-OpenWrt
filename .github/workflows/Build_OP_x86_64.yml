@@ -14,7 +14,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     steps:
     - name: Checkout
@@ -39,6 +39,11 @@ jobs:
         sudo -E apt-get -y autoremove --purge
         sudo -E apt-get clean
 
+    - name: Free disk space
+      uses: sbwml/actions@free-disk
+      with:
+        build-mount-path: /home/runner/work/AutoBuild-OpenWrt/AutoBuild-OpenWrt
+        
     - name: Clone source code
       env: 
         REPO_URL: https://github.com/coolsnowwolf/lede
@@ -46,7 +51,6 @@ jobs:
       run: |
         git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
         cd openwrt
-        echo "src-git ssrp https://github.com/fw876/helloworld.git" >> ./feeds.conf.default
         
     - name: Update & Install feeds
       working-directory: ./openwrt
