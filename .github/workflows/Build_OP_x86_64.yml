@@ -76,6 +76,7 @@ jobs:
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         chmod +x ./customize.sh && ./customize.sh
         bash <(curl -sS https://raw.githubusercontent.com/ncwb/AutoBuild-OpenWrt/master/customize.sh)
+        curl -s https://raw.githubusercontent.com/ncwb/AutoBuild-OpenWrt/master/x86_64.config > openwrt/.config
         cd openwrt && make defconfig
         
     - name: Download package
