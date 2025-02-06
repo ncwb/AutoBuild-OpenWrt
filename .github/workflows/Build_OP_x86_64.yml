@@ -11,9 +11,7 @@ name: Build_x86_64
 on: 
   repository_dispatch:
   workflow_dispatch:
-  schedule:
-    - cron: 0 */8 * * *
-    
+   
 jobs:
   build:
     runs-on: ubuntu-24.04
