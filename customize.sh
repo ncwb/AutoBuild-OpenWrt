@@ -15,4 +15,5 @@ sed -i 's/$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.//g' openwrt/package/lean/default-se
 #rm openwrt/package/lean/luci-theme-argon -rf
 mkdir -p openwrt/files/www
 curl -so openwrt/files/www/gdyey.html https://raw.githubusercontent.com/ncwb/AutoBuild-OpenWrt/master/gdyey.html
+curl -s https://raw.githubusercontent.com/ncwb/openwrt-x86-64/openwrt/patch/target-modify_for_x86_64.patch | patch -p1
 #mv gdyey.html openwrt/files/www/gdyey.html
