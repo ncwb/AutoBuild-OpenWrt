@@ -13,7 +13,7 @@ sed -i 's/6.6/6.12/g' openwrt/target/linux/x86/Makefile
 sed -i 's/$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.//g' openwrt/package/lean/default-settings/files/zzz-default-settings
 sed -i 's/CPU_CFLAGS = -Os -pipe/CPU_CFLAGS = -O3 -mtune=generic -pipe/g' openwrt/include/target.mk
 sed -i 's/= .19/= .20/g' openwrt/include/kernel-6.12
-sed -i 's/.19 = d73bf057bec04434b169d1b61641936f7d0c97ceb923a281f32e35dd4dcc6531/.20 = beb902a5f69d9e57710112203db38111dad6d30556ea8ce389284c8077fe944d/g' openwrt/include/kernel-6.12
+sed -i 's/.19 = d73bf057bec04434b169d1b61641936f7d0c97ceb923a281f32e35dd4dcc6531/.20 = 230e89b07b0ab82e74f07ecc1bee3105dca81d0ef4a97f900929c407249b6ac7/g' openwrt/include/kernel-6.12
 #3. Replace with JerryKuKu’s Argon
 #rm openwrt/package/lean/luci-theme-argon -rf
 mkdir -p openwrt/files/www
