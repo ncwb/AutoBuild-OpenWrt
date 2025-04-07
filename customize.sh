@@ -12,8 +12,8 @@ sed -i 's/6.6/6.12/g' openwrt/target/linux/x86/Makefile
 #2. Clear the login password
 sed -i 's/$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.//g' openwrt/package/lean/default-settings/files/zzz-default-settings
 sed -i 's/CPU_CFLAGS = -Os -pipe/CPU_CFLAGS = -O3 -mtune=generic -pipe/g' openwrt/include/target.mk
-sed -i 's/= .20/= .21/g' openwrt/include/kernel-6.12
-sed -i 's/.20 = 230e89b07b0ab82e74f07ecc1bee3105dca81d0ef4a97f900929c407249b6ac7/.21 = 9d1ae39a2ea024d99646f645fdbbbfa4545577132ba2643e01df75e32246d6c7/g' openwrt/include/kernel-6.12
+sed -i 's/= .20/= .22/g' openwrt/include/kernel-6.12
+sed -i 's/.20 = 230e89b07b0ab82e74f07ecc1bee3105dca81d0ef4a97f900929c407249b6ac7/.22 = ab48800ab49985a78d2318ae8ac5f28fd3e123ea17357ef21498105a53337336/g' openwrt/include/kernel-6.12
 #3. Replace with JerryKuKu’s Argon
 #rm openwrt/package/lean/luci-theme-argon -rf
 mkdir -p openwrt/files/www
