@@ -71,7 +71,7 @@ jobs:
 
     - name: Configuration Customization - Build_x86_64
       env:
-        CONFIG_FILE: 'x86_64.config'
+        CONFIG_FILE: 'nft.config'
       run: |
         bash <(curl -sS https://raw.githubusercontent.com/ncwb/AutoBuild-OpenWrt/master/customize.sh)
         curl -s https://raw.githubusercontent.com/ncwb/AutoBuild-OpenWrt/master/x86_64.config > openwrt/.config
