@@ -22,7 +22,7 @@ jobs:
       fetch-depth: 0
 
     - name: cache
-        uses: klever1988/cachewrtbuild@main
+      uses: klever1988/cachewrtbuild@main
 
     - name: Free disk space
       uses: sbwml/actions@free-disk
