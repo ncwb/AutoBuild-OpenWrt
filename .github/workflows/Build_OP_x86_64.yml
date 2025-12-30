@@ -20,9 +20,6 @@ jobs:
     - name: Checkout
       uses: actions/checkout@master
 
-    - name: cache
-      uses: klever1988/cachewrtbuild@main
-
     - name: Free disk space
       uses: sbwml/actions@free-disk
       with:
