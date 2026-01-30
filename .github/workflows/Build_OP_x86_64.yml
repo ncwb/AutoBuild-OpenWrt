@@ -20,10 +20,20 @@ jobs:
     - name: Checkout
       uses: actions/checkout@master
 
+#    - name: Free disk space
+#      uses: sbwml/actions@free-disk
+#      with:
+#        build-mount-path: /home/runner/work/AutoBuild-OpenWrt/AutoBuild-OpenWrt
     - name: Free disk space
-      uses: sbwml/actions@free-disk
+      uses: coder-xiaomo/free-disk-space@main
       with:
-        build-mount-path: /home/runner/work/AutoBuild-OpenWrt/AutoBuild-OpenWrt
+        tool-cache: false
+        android: true
+        dotnet: true
+        haskell: true
+        large-packages: true
+        docker-images: true
+        swap-storage: true
         
     - name: Initialization environment
       env:
