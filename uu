@@ -1,0 +1,35 @@
+#!/bin/sh /etc/rc.common
+
+START=99
+
+script_addr="https://uurouter.gdl.netease.com/uuplugin-script/openwrt/v1/install.sh"
+
+start() {
+    
+    if [ ! -f "/usr/sbin/uu/uuplugin_monitor.sh" ]; then
+        logger -t UU_PLUGIN "## UU Plugin Installing..."
+
+        wget -q -O /tmp/install.sh $script_addr
+        sn=$(/bin/sh /tmp/install.sh openwrt $(uname -m))
+        rm -f /tmp/install.sh
+
+        logger -t UU_PLUGIN "##############################"
+        logger -t UU_PLUGIN "##                          ##"
+        logger -t UU_PLUGIN "##   $sn   ##"
+        logger -t UU_PLUGIN "##                          ##"
+        logger -t UU_PLUGIN "##############################"
+
+        logger -t UU_PLUGIN "## UU Plugin Installed..."
+    else
+        logger -t UU_PLUGIN "## UU Plugin Already Installed, Skip..."
+    fi
+
+}
+
+boot() {
+    start
+}
+
+reload() {
+    start
+}
