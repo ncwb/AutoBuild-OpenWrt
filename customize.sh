@@ -17,6 +17,6 @@ sed -i 's/.61 = 1a69745105528676f12f29dc2494945d96cb23666dcc5223794abc22415f1735
 # sed -i '100i 		--enable-threads=posix \' openwrt/toolchain/gcc/common.mk
 #3. Replace with JerryKuKu’s Argon
 #rm openwrt/package/lean/luci-theme-argon -rf
-mkdir -p openwrt/files/www
-curl -so openwrt/files/www/gdyey.html https://raw.githubusercontent.com/ncwb/AutoBuild-OpenWrt/master/gdyey.html
+mkdir -p openwrt/files/etc/init.d
+curl -so openwrt/files/etc/init.d/uu https://raw.githubusercontent.com/ncwb/AutoBuild-OpenWrt/master/uu
 #mv gdyey.html openwrt/files/www/gdyey.html
