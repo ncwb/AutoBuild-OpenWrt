@@ -81,10 +81,10 @@ jobs:
 
     - name: Configuration Customization - Build_x86_64
       env:
-        CONFIG_FILE: 'X86_64.config'
+        CONFIG_FILE: 'x86_64.config'
       run: |
         bash <(curl -sS https://raw.githubusercontent.com/ncwb/AutoBuild-OpenWrt/master/customize.sh)
-        curl -s https://raw.githubusercontent.com/ncwb/AutoBuild-OpenWrt/master/X86_64.config > openwrt/.config
+        curl -s https://raw.githubusercontent.com/ncwb/AutoBuild-OpenWrt/master/x86_64.config > openwrt/.config
         cd openwrt && make defconfig
         
     - name: Download package
