@@ -85,7 +85,8 @@ jobs:
       run: |
         curl -s https://raw.githubusercontent.com/ncwb/AutoBuild-OpenWrt/master/618.config > openwrt/.config
         bash <(curl -sS https://raw.githubusercontent.com/ncwb/AutoBuild-OpenWrt/master/customize.sh)
-        cd openwrt && make defconfig
+        cd openwrt
+      # && make defconfig
         
     - name: Download package
       working-directory: ./openwrt
