@@ -11,7 +11,7 @@ sed -i 's/\/bin\/ash/\/bin\/bash/' openwrt/package/base-files/files/etc/passwd
 #sed -i 's/6.12/6.18/g' openwrt/target/linux/x86/Makefile
 #2. Clear the login password
 sed -i 's/$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.//g' openwrt/package/lean/default-settings/files/zzz-default-settings
-#sed -i 's/CPU_CFLAGS = -Os -pipe/CPU_CFLAGS = -O3 -mtune=generic -pipe/g' openwrt/include/target.mk
+sed -i 's/CPU_CFLAGS = -Os -pipe/CPU_CFLAGS = -O3 -mtune=generic -pipe/g' openwrt/include/target.mk
 # sed -i 's/= .63/= .68/g' openwrt/include/kernel-6.12
 # sed -i 's/.63 = 9502c5ffe4b894383c97abfccf74430a84732f04ee476b9c0d87635b29df7db3/.68 = d367c7504bd4da520dd01eb08125d2d0ac088bc8af4cd56d236f2074dd4225b7/g' openwrt/include/kernel-6.12
 # sed -i '100i 		--enable-threads=posix \' openwrt/toolchain/gcc/common.mk
@@ -21,13 +21,13 @@ sed -i 's/$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.//g' openwrt/package/lean/default-se
 # curl -so openwrt/files/etc/init.d/uu https://raw.githubusercontent.com/ncwb/AutoBuild-OpenWrt/master/uu
 #mv gdyey.html openwrt/files/www/gdyey.html
 # 批量替换所有 ksmbd 强制项为 "未设置"
-#sed -i 's/CONFIG_PACKAGE_autosamba_INCLUDE_KSMBD=y/# CONFIG_PACKAGE_autosamba_INCLUDE_KSMBD is not set/' openwrt/.config
-#sed -i 's/CONFIG_PACKAGE_kmod-fs-ksmbd=y/# CONFIG_PACKAGE_kmod-fs-ksmbd is not set/' openwrt/.config
-#sed -i 's/CONFIG_KSMBD_SMB_INSECURE_SERVER=y/# CONFIG_KSMBD_SMB_INSECURE_SERVER is not set/' openwrt/.config
-#sed -i 's/CONFIG_PACKAGE_luci-app-ksmbd=y/# CONFIG_PACKAGE_luci-app-ksmbd is not set/' openwrt/.config
-#sed -i 's/CONFIG_PACKAGE_luci-i18n-ksmbd-zh-cn=y/# CONFIG_PACKAGE_luci-i18n-ksmbd-zh-cn is not set/' openwrt/.config
-#sed -i 's/CONFIG_PACKAGE_ksmbd-server=y/# CONFIG_PACKAGE_ksmbd-server is not set/' openwrt/.config
+sed -i 's/CONFIG_PACKAGE_autosamba_INCLUDE_KSMBD=y/# CONFIG_PACKAGE_autosamba_INCLUDE_KSMBD is not set/' openwrt/.config
+sed -i 's/CONFIG_PACKAGE_kmod-fs-ksmbd=y/# CONFIG_PACKAGE_kmod-fs-ksmbd is not set/' openwrt/.config
+sed -i 's/CONFIG_KSMBD_SMB_INSECURE_SERVER=y/# CONFIG_KSMBD_SMB_INSECURE_SERVER is not set/' openwrt/.config
+sed -i 's/CONFIG_PACKAGE_luci-app-ksmbd=y/# CONFIG_PACKAGE_luci-app-ksmbd is not set/' openwrt/.config
+sed -i 's/CONFIG_PACKAGE_luci-i18n-ksmbd-zh-cn=y/# CONFIG_PACKAGE_luci-i18n-ksmbd-zh-cn is not set/' openwrt/.config
+sed -i 's/CONFIG_PACKAGE_ksmbd-server=y/# CONFIG_PACKAGE_ksmbd-server is not set/' openwrt/.config
 
 # 关键！禁止 defconfig 自动补全
-#touch openwrt/.config.override
-#echo "# 禁用所有 ksmbd 相关组件" >> openwrt/.config.override
+touch openwrt/.config.override
+echo "# 禁用所有 ksmbd 相关组件" >> openwrt/.config.override
