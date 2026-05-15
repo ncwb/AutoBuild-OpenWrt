@@ -1,4 +1,5 @@
 #!/bin/bash
+"src-git socat https://github.com/chenmozhijin/luci-app-socat.git;main"
 #=================================================
 # Description: DIY script
 # Lisence: MIT
